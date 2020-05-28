@@ -1,0 +1,73 @@
+{
+  "name": "as-ui",
+  "version": "0.1.23",
+  "description": "A library packaging tool based on webpack and vue-cli3",
+  "private": false,
+  "main": "lib/as-ui.js",
+  "author": {
+    "name": "hainan dong"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vue"
+  ],
+  "files": [
+    "lib",
+    "src",
+    "packages",
+    "types"
+  ],
+  "style": "lib/theme/index.css",
+  "repository": {
+    "type": "git",
+    "url": "https://gits.autostreets.com/web-private-stores/as-ui.git"
+  },
+  "homepage": "https://gits.autostreets.com/web-private-stores/as-ui.git",
+  "bugs": {
+    "url": "https://gits.autostreets.com/web-private-stores/as-ui.git"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "lib": "cross-env rimraf ./lib && node ./build/cli.build.js"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "vue-router": "^3.2.0",
+    "core-js": "^3.6.5",
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-plugin-router": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "babel-eslint": "^10.1.0",
+    "chalk": "^4.0.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "highlight.js": "^10.0.3",
+    "image-webpack-loader": "^6.0.0",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "markdown-it": "^11.0.0",
+    "markdown-it-anchor": "^5.3.0",
+    "markdown-it-container": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "runjs": "^4.4.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "transliteration": "^2.1.11",
+    "vue-loader": "^15.9.2",
+    "vue-markdown-loader": "^2.4.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
