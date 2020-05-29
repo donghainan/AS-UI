@@ -17,4 +17,4 @@
 
 ## 贡献
 
-如果你在使用 `AS-UI` 时遇到问题，或者有好的建议，欢迎给我们提 [Issue](https://gits.autostreets.com/web-private-stores/as-ui/issues) 或 [Pull Request](https://gits.autostreets.com/web-private-stores/as-ui/merge_requests)
+如果你在使用 `AS-UI` 时遇到问题，或者有好的建议，欢迎给我们提 [Issue](https://github.com/donghainan/AS-UI/issues) 或 [Pull Request](https://github.com/donghainan/AS-UI/pulls)

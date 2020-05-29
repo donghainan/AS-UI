@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       height: document.documentElement.clientHeight
     }

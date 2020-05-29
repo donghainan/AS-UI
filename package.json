@@ -20,11 +20,11 @@
   "style": "lib/theme/index.css",
   "repository": {
     "type": "git",
-    "url": "https://gits.autostreets.com/web-private-stores/as-ui.git"
+    "url": "https://github.com/donghainan/AS-UI.git"
   },
-  "homepage": "https://gits.autostreets.com/web-private-stores/as-ui.git",
+  "homepage": "https://github.com/donghainan/AS-UI.git",
   "bugs": {
-    "url": "https://gits.autostreets.com/web-private-stores/as-ui.git"
+    "url": "https://github.com/donghainan/AS-UI.git"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
