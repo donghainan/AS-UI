@@ -24,6 +24,11 @@
       "name": "logs",
       "path": "/logs",
       "desc": "更新日志"
+    },
+    {
+      "name": "npm",
+      "path": "/npm",
+      "desc": "私有npm"
     }
   ],
   "组件": [

@@ -3,12 +3,12 @@ const fs = require('fs')
 const chalk = require('chalk')
 var { outputPath } = require('../config/index')
 module.exports = {
-  getAssetsPath (_path = '.') {
+  getAssetsPath(_path = '.') {
     return path.posix.join(outputPath, _path)
   },
   isProduct: ['production', 'prod'].includes(process.env.NODE_ENV),
   env: process.env.NODE_ENV,
-  resolve (_path) {
+  resolve(_path) {
     return _path ? path.resolve(__dirname, _path) : path.resolve(__dirname, '..', outputPath)
   },
   chalkConsole: {

@@ -12,7 +12,7 @@ const cssFiles = []
 const pkg = []
 
 // build 方法, 构建包，提取css
-function build ({ input, output } = {}, index, arr) {
+function build({ input, output } = {}, index, arr) {
   chalkConsole.building(index + 1, arr.length)
   run(
     `vue-cli-service build --target lib --no-clean  --name ${output} --dest ${getAssetsPath()} ${input}`

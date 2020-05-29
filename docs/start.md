@@ -1,6 +1,6 @@
 
 # 快速上手
-
+本节将介绍如何在项目中使用 AS UI
 ----
 
 ## 使用前准备
@@ -19,51 +19,100 @@
 > npm i -g vue-cli
 > mkdir my-project && cd my-project
 > vue init webpack
-> npm i && npm i mini-ui
+> npm i && npm i as-ui
 ```
 
 ## 标准开发
 
 实际项目中，往往会使用 `webpack`，`rollup` 或者 `gulp` 的工作流，大多可以做到按需加载页面用到的组件，所以不推荐直接使用 `<script>` 标签全局引入的方式使用。
 
-### 全局组件使用
 
-可以在项目的入口文件中引入所有组件或所需组件
 
-```js
-import AsUI from 'as-ui' // 引入组件库
-import 'as-ui/lib/theme/as-ui.css' // 引入样式库
+
+### 引入 AS UI
+你可以引入整个 AS UI，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 AS UI
+----
+###### 完整引入
+
+在 main.js 中写入以下内容：
+```bash
+import Vue from 'vue'
+import AsUI from 'as-ui'
+import 'as-ui/lib/theme/as-ui.css'
+import App from './App.vue'
 
 Vue.use(AsUI)
+
+new Vue({
+  el: '#app',
+  components: { App }
+})
+
 ```
+以上代码便完成了 AS UI 的引入。需要注意的是，样式文件需要单独引入。
+----
+###### 按需引入
 
-### 单个组件按需使用
-
-可以局部注册所需的组件，适用于与其他框架组合使用的场景
-
-```js
-import { '组件' } from 'asui'
-
-Vue.use('组件')
-
-
-或者，在单文件中使用
-export default {
-  components: {
-    '组件'
-  }
+借助 [babel-plugin-component](https://github.com/ElementUI/babel-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
+首先，安装 `babel-plugin-component`：
+```bash
+npm install babel-plugin-component -D
+```
+然后，将 `.babelrc` 或者 `babel.config.js` 修改为：
+```bash
+module.exports = {
+  presets: [
+    '@vue/cli-plugin-babel/preset'
+  ],
+  plugins:[
+    [  'import',
+      {
+        libraryName: 'as-ui',
+        libraryDirectory: 'lib',
+        // 样式文件,因为打包后样式统一放在/lib/theme下,所以需要稍微转换下
+        style: (name, file) => {
+          const libDirIndex = name.lastIndexOf('/')
+          const libDir = name.substring(0, libDirIndex)
+          const fileName = name.substr(libDirIndex + 1)
+          return `${libDir}/theme/${fileName}.css`;
+        }
+      }
+    ]
+  ]
 }
 ```
+如果你只希望引入部分组件，比如 Button 和 Cell，那么需要在 main.js 中写入以下内容：
 
-在模板中，用 `<as-button></as-button>` 自定义标签的方式使用组件
+```bash
+import Vue from 'vue'
+import { Button, Cell } from 'as-ui'
+import App from './App.vue'
 
-```html
-<template>
-  <div>
-    <as-button>这是一个按钮</as-button>
-  </div>
-</template>
+Vue.component(Button.name, Button)
+Vue.component(Cell.name, Cell)
+/* 或写为
+ * Vue.use(Button)
+ * Vue.use(Cell)
+ */
+
+new Vue({
+  el: '#app',
+  components: { App }
+})
 ```
+## 开始使用
+
+至此，一个基于 Vue 和 AS UI 的开发环境已经搭建完毕，现在就可以编写代码了。启动开发模式：
+
+```bash
+npm run dev
+```
+编译：
+
+```bash
+npm run build
+```
+各个组件的使用方法请参阅它们各自的文档。
 
 ## 自定义主题
 
