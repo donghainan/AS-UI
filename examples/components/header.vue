@@ -31,9 +31,10 @@
     "
   >
     <div class="header-container">
-      <router-link :to="{ name: 'index' }"
-        ><img src="../assets/img/autostreets_logo.png" width="100"
-      /></router-link>
+      <router-link :to="{ name: 'index' }">
+        <p>AS-UI</p>
+        <!-- <img src="../assets/img/avater.png" width="100" /> -->
+      </router-link>
       <router-link :to="{ name: 'giud' }">组件</router-link>
     </div>
   </header>
@@ -41,7 +42,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {}
   }
 }
